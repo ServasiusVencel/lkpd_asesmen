@@ -14,5 +14,5 @@ consolelog.question('Masukkan total detik: ', (input) => {
 
   console.log(`${jam} jam ${menit} menit ${detik} detik`);
 
-  rl.close();
+  consolelog.close();
 });
