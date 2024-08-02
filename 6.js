@@ -10,8 +10,7 @@ const consolelog = readline.createInterface({
 
 const inputNilai = (count) => {
   if (count === 10) {
-    console.log(`Nilai tertinggi: ${nilaiMax}`);
-    console.log(`Jumlah siswa dengan nilai tertinggi: ${jumlahTertinggi}`);
+    console.log(`Nilai tertinggi: ${nilaiMax}, Jumlah siswa dengan nilai tertinggi: ${jumlahTertinggi}`);
     consolelog.close();
     return;
   }

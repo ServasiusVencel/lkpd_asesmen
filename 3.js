@@ -1,20 +1,32 @@
-const totalDetik = 3600;
-let jam, menit, detik;
+const readline = require('readline');
 
-if (totalDetik >= 3600) {
-  jam = Math.floor(totalDetik / 3600);
-  sisadetik = totalDetik % 3600; 
-} else {
-  jam = 0;
-  sisadetik = totalDetik;
-}
+const console = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-if (sisadetik >= 60) {
-  menit = Math.floor(sisadetik / 60); 
-  detik = sisadetik % 60; 
-} else {
-  menit = 0;
-  detik = sisadetik;
-}
+console.question('Masukkan total detik: ', (input) => {
+  const totalDetik = parseInt(input);
+  let jam, menit, detik;
 
-console.log(`Jam: ${jam}, Menit: ${menit}, Detik: ${detik}`);
+  if (totalDetik >= 3600) {
+    jam = Math.floor(totalDetik / 3600);
+    sisadetik = totalDetik % 3600;
+  } else {
+    jam = 0;
+    sisadetik = totalDetik;
+  }
+
+  if (sisadetik >= 60) {
+    menit = Math.floor(sisadetik / 60);
+    detik = sisadetik % 60;
+  } else {
+    menit = 0;
+    detik = sisadetik;
+  }
+
+  console.log(`Jam: ${jam}, Menit: ${menit}, Detik: ${detik}`);
+
+  // Menutup readline interface
+  console.close();
+});
