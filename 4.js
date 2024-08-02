@@ -1,10 +1,10 @@
 const readline = require('readline');
-const rl = readline.createInterface({
+const consolelog = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-rl.question('Masukkan total detik: ', (input) => {
+consolelog.question('Masukkan total detik: ', (input) => {
 
   const totalDetik = parseInt(input);
 
