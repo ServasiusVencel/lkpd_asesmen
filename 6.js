@@ -3,7 +3,7 @@ const readline = require('readline');
 let nilaiMax = 100;
 let jumlahTertinggi = 0;
 
-const rl = readline.createInterface({
+const consolelog = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -12,11 +12,11 @@ const inputNilai = (count) => {
   if (count === 10) {
     console.log(`Nilai tertinggi: ${nilaiMax}`);
     console.log(`Jumlah siswa dengan nilai tertinggi: ${jumlahTertinggi}`);
-    rl.close();
+    consolelog.close();
     return;
   }
   
-  rl.question(`Masukkan nilai ujian ke-${count + 1}: `, (input) => {
+  consolelog.question(`Masukkan nilai ujian ke-${count + 1}: `, (input) => {
     const nilai = parseInt(input);
     
     if (nilai > nilaiMax) {
