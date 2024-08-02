@@ -1,13 +1,18 @@
-const totaldetik = 5000;
-let jam, menit, detik;
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
+rl.question('Masukkan total detik: ', (input) => {
 
-jam = Math.floor(totaldetik / 3600);
+  const totalDetik = parseInt(input);
 
-let sisadetik = totaldetik % 3600;
+  const jam = Math.floor(totalDetik / 3600);
+  const menit = Math.floor((totalDetik % 3600) / 60);
+  const detik = totalDetik % 60;
 
-menit = Math.floor(sisadetik / 60);
+  console.log(`${jam} jam ${menit} menit ${detik} detik`);
 
-detik = sisadetik % 60;
-
-console.log(`${jam} jam ${menit} menit ${detik} detik`);
+  rl.close();
+});
